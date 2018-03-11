@@ -1,0 +1,16 @@
+    <h1>Save a video</h1>
+    <form method="post" action="/videos/{{video._id}}/updates">
+      {{#each errors as |error|}}
+        <span class="error">{{error.message}}</span>
+      {{/each}}
+      <label for="title">Title</label>
+      <input id="title-input" name="title" value="{{video.title}}" />
+
+      <label for="description">Description</label>
+      <textarea id="description-input" name="description">{{video.description}}</textarea>
+
+      <label for="url">Video URL</label>
+      <input id="url-input" name="url" value="{{video.url}}" />
+
+      <button type="submit" class="add-video-button">Add</button>
+    </form>
